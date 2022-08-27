@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1C3D6D3D28B8C335009C1303 /* Algorithms.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C3D6D3428B8C335009C1303 /* Algorithms.framework */; };
-		1C3D6D4228B8C335009C1303 /* AlgorithmsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3D6D4128B8C335009C1303 /* AlgorithmsTests.swift */; };
-		1C3D6D4D28B8C364009C1303 /* Executor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3D6D4C28B8C364009C1303 /* Executor.swift */; };
+		1C3D6D4228B8C335009C1303 /* BinarySearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3D6D4128B8C335009C1303 /* BinarySearchTests.swift */; };
+		1C3D6D4D28B8C364009C1303 /* BinarySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3D6D4C28B8C364009C1303 /* BinarySearch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,8 +25,8 @@
 /* Begin PBXFileReference section */
 		1C3D6D3428B8C335009C1303 /* Algorithms.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Algorithms.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C3D6D3C28B8C335009C1303 /* AlgorithmsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlgorithmsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1C3D6D4128B8C335009C1303 /* AlgorithmsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmsTests.swift; sourceTree = "<group>"; };
-		1C3D6D4C28B8C364009C1303 /* Executor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Executor.swift; sourceTree = "<group>"; };
+		1C3D6D4128B8C335009C1303 /* BinarySearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySearchTests.swift; sourceTree = "<group>"; };
+		1C3D6D4C28B8C364009C1303 /* BinarySearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySearch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +69,7 @@
 		1C3D6D3628B8C335009C1303 /* Algorithms */ = {
 			isa = PBXGroup;
 			children = (
-				1C3D6D4C28B8C364009C1303 /* Executor.swift */,
+				1C3D6D4C28B8C364009C1303 /* BinarySearch.swift */,
 			);
 			path = Algorithms;
 			sourceTree = "<group>";
@@ -77,7 +77,7 @@
 		1C3D6D4028B8C335009C1303 /* AlgorithmsTests */ = {
 			isa = PBXGroup;
 			children = (
-				1C3D6D4128B8C335009C1303 /* AlgorithmsTests.swift */,
+				1C3D6D4128B8C335009C1303 /* BinarySearchTests.swift */,
 			);
 			path = AlgorithmsTests;
 			sourceTree = "<group>";
@@ -191,7 +191,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C3D6D4D28B8C364009C1303 /* Executor.swift in Sources */,
+				1C3D6D4D28B8C364009C1303 /* BinarySearch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,7 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C3D6D4228B8C335009C1303 /* AlgorithmsTests.swift in Sources */,
+				1C3D6D4228B8C335009C1303 /* BinarySearchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
