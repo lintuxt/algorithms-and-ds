@@ -1,12 +1,12 @@
 //
-//  AlgorithmsTests.swift
+//  BinarySearchTests.swift
 //  AlgorithmsTests
 //
 //  Created by Alexis Charytonow on 8/26/22.
 //
 
 import XCTest
-@testable import Algorithms
+import Algorithms
 
 class BinarySearchTests: XCTestCase {
     

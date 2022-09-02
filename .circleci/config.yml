@@ -1,0 +1,10 @@
+version: 2.1
+jobs:
+  build:
+    macos:
+      xcode: 13.4.1
+    steps:
+      - checkout
+      - run:
+          name: "Run CI Scheme"
+          command: xcodebuild clean build test -scheme "CI" -project "Algorithms/Algorithms.xcodeproj" -sdk macosx12.3 CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO 
