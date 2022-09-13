@@ -41,6 +41,9 @@
                <Test
                   Identifier = "BinarySearchTests">
                </Test>
+               <Test
+                  Identifier = "SelectionSortTests">
+               </Test>
             </SkippedTests>
          </TestableReference>
       </Testables>
