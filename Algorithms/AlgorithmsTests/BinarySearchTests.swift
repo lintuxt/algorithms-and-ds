@@ -20,7 +20,7 @@ class BinarySearchTests: XCTestCase {
     }
     
     typealias BinarySearchTestCase = (expectedPosition: Int?, arrayOfInts: [Int], target: Int)
-    func generateTestCases(seed: Int) -> [BinarySearchTestCase] {
+    public static func generateTestCases(seed: Int) -> [BinarySearchTestCase] {
         var testCases = [BinarySearchTestCase]()
         var arrayOfInts = [Int]()
         let absoluteSaltedSeed = abs(seed) + Int.random(in: 5...10)
@@ -40,7 +40,7 @@ class BinarySearchTests: XCTestCase {
         assertSearch(expectedPosition: nil, in: [Int](), search: 0)
         assertSearch(expectedPosition: 2, in: [5, 10, 15, 20, 25], search: 15)
         
-        for tc in generateTestCases(seed: 0) {
+        for tc in BinarySearchTests.generateTestCases(seed: 0) {
             print("Expected Position: \(String(describing: tc.expectedPosition)), Array: \(tc.arrayOfInts), Target: \(tc.target)")
             assertSearch(expectedPosition: tc.expectedPosition, in: tc.arrayOfInts, search: tc.target)
         }
