@@ -39,7 +39,13 @@
             </BuildableReference>
             <SkippedTests>
                <Test
+                  Identifier = "BFSTests">
+               </Test>
+               <Test
                   Identifier = "BinarySearchTests">
+               </Test>
+               <Test
+                  Identifier = "DFSTests">
                </Test>
                <Test
                   Identifier = "SelectionSortTests">
