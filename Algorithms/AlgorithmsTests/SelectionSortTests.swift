@@ -8,23 +8,10 @@
 import XCTest
 import Algorithms
 
-class SelectionSortTests: XCTestCase {
-    
-    func generateTestCase(n: Int) ->  (unsortedArray: [Int], sortedArray: [Int]) {
-        XCTAssert(n >= 0)
-        
-        var unsortedArrayOfInts = [Int]()
-        
-        for _ in 0..<n {
-            unsortedArrayOfInts.append(Int.random(in: 0...10000))
-        }
-        
-        return (unsortedArray: unsortedArrayOfInts, sortedArray: unsortedArrayOfInts.sorted())
-    }
-    
+class SelectionSortTests: XCTestCase {    
     func test_selectionSort() {
         for i in 0..<15 {
-            let testCase = generateTestCase(n: i)
+            let testCase = TestCaseGenerator.generateSortingTestCase(n: i)
             let sortedArrayBySelectionSort = SelectionSort.selectionSort(testCase.unsortedArray)
             XCTAssertEqual(sortedArrayBySelectionSort, testCase.sortedArray)
         }

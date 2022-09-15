@@ -30,18 +30,5 @@ class DivideAndConquer: XCTestCase {
     func test_maxNumver() {
         let array = [2, 8, 55, 10, 20]
         XCTAssertEqual(55, MaxSolver.solve(array))
-    }
-    
-    func test_binarySearchSolver() {
-        
-        let knownFailingCase = [0, 2, 4, 6, 8]
-        let target = 7
-        XCTAssertEqual(nil, BinarySearchSolver.solve(knownFailingCase, target: target))
-        
-        for tc in BinarySearchTests.generateTestCases(seed: 0) {
-            print("Expected Position: \(String(describing: tc.expectedPosition)), Array: \(tc.arrayOfInts), Target: \(tc.target)")
-            let positionFound = BinarySearchSolver.solve(tc.arrayOfInts, target: tc.target)
-            XCTAssertEqual(tc.expectedPosition, positionFound)
-        }
-    }
+    }    
 }

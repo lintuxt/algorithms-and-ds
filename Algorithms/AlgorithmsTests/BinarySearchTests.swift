@@ -10,39 +10,44 @@ import Algorithms
 
 class BinarySearchTests: XCTestCase {
     
-    func assertSearch(expectedPosition position: Int?,
+    func assertSearchIterative(expectedPosition position: Int?,
                       in arrayOfInts: [Int],
                       search target: Int,
                       file: StaticString = #file,
                       line: UInt = #line) {
-        let positionFound = BinarySearch.binarySearch(arrayOfInts: arrayOfInts, target: target)
+        let positionFound = BinarySearch.binarySearchIterative(arrayOfInts: arrayOfInts, target: target)
         XCTAssertEqual(position, positionFound, file: file, line: line)
     }
     
-    typealias BinarySearchTestCase = (expectedPosition: Int?, arrayOfInts: [Int], target: Int)
-    public static func generateTestCases(seed: Int) -> [BinarySearchTestCase] {
-        var testCases = [BinarySearchTestCase]()
-        var arrayOfInts = [Int]()
-        let absoluteSaltedSeed = abs(seed) + Int.random(in: 5...10)
-        let randomStep = Int.random(in: 2...10)
-        for n in 0..<absoluteSaltedSeed {
-            arrayOfInts.append(n*randomStep)
+    func test_binarySearch_iterative() {
+        assertSearchIterative(expectedPosition: nil, in: [Int](), search: 0)
+        assertSearchIterative(expectedPosition: 2, in: [5, 10, 15, 20, 25], search: 15)
+        
+        for tc in TestCaseGenerator.generateBinarySearchTestCases(seed: 0) {
+            print("Expected Position: \(String(describing: tc.expectedPosition)), Array: \(tc.arrayOfInts), Target: \(tc.target)")
+            assertSearchIterative(expectedPosition: tc.expectedPosition, in: tc.arrayOfInts, search: tc.target)
         }
-        let lastIndex = arrayOfInts.last ?? 0
-        for n in 0..<lastIndex {
-            let index = arrayOfInts.firstIndex(of: n)
-            testCases.append((index, arrayOfInts, n))
-        }
-        return testCases
     }
     
-    func test_binarySearch() {
-        assertSearch(expectedPosition: nil, in: [Int](), search: 0)
-        assertSearch(expectedPosition: 2, in: [5, 10, 15, 20, 25], search: 15)
+    func assertSearchRecursive(expectedPosition position: Int?,
+                      in arrayOfInts: [Int],
+                      search target: Int,
+                      file: StaticString = #file,
+                      line: UInt = #line) {
+        let positionFound = BinarySearch.binarySearchRecursive(arrayOfInts: arrayOfInts, target: target)
+        XCTAssertEqual(position, positionFound, file: file, line: line)
+    }
+    
+    func test_binarySearch_recursive() {
         
-        for tc in BinarySearchTests.generateTestCases(seed: 0) {
+        let knownFailingCase = [0, 2, 4, 6, 8]
+        let target = 7
+        XCTAssertEqual(nil, BinarySearch.binarySearchRecursive(arrayOfInts: knownFailingCase, target: target))
+        
+        for tc in TestCaseGenerator.generateBinarySearchTestCases(seed: 0) {
             print("Expected Position: \(String(describing: tc.expectedPosition)), Array: \(tc.arrayOfInts), Target: \(tc.target)")
-            assertSearch(expectedPosition: tc.expectedPosition, in: tc.arrayOfInts, search: tc.target)
+            let positionFound = BinarySearch.binarySearchRecursive(arrayOfInts: tc.arrayOfInts, target: tc.target)
+            XCTAssertEqual(tc.expectedPosition, positionFound)
         }
     }
     
